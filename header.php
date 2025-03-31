@@ -15,9 +15,10 @@
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#contact">Contact Me</a></li>
             </ul>
-            <form action="#" method="get" class="search-form">
-                <input type="text" placeholder="Search..." name="search">
-                <button type="submit">Search</button>
-            </form>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search..." required>
+                <button id="searchButton" onclick="performSearch()">Search</button>
+            </div>
         </nav>
     </header>
+    <script src="script.js"></script>

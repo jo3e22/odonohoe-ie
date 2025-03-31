@@ -1,81 +1,33 @@
-<?php
-// Start the session
-session_start();
+<?php include 'header.php'; ?>
 
-// Check if the form has been submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get the name from the form
-    $name = htmlspecialchars(trim($_POST['name']));
-    // Store the name in the session
-    $_SESSION['name'] = $name;
-} else {
-    // If no name is submitted, use a default value
-    $name = isset($_SESSION['name']) ? $_SESSION['name'] : 'Guest';
-}
+<main>    
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Information about yourself, your background, and your interests.</p>
+    </section>
 
-// Get the current date and time
-$currentDateTime = date('Y-m-d H:i:s');
-?>
+    <section id="cv">
+        <h2>Curriculum Vitae</h2>
+        <p>Download my CV: <a href="uploads/my_cv.pdf" target="_blank">Click here</a></p>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <?php if (isset($_GET['success'])): ?>
+            <p>Thank you for your message! I will get back to you soon.</p>
+        <?php endif; ?>
+        <form action="contact.php" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My PHP Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            color: #333;
-        }
-        form {
-            margin-top: 20px;
-        }
-        input[type="text"] {
-            padding: 10px;
-            width: 200px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        input[type="submit"] {
-            padding: 10px 15px;
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #4cae4c;
-        }
-        footer {
-            margin-top: 20px;
-            font-size: 0.8em;
-            color: #777;
-        }
-    </style>
-</head>
-<body>
 
-    <h1>Welcome to My PHP Page!</h1>
-    <p>Hello, <?php echo $name; ?>!</p>
-    <p>Current Date and Time: <?php echo $currentDateTime; ?></p>
-    <p>Download my CV: <a href="uploads/my_cv.pdf" target="_blank">Click here</a></p>
+</main>
 
-    <form method="POST" action="">
-        <input type="text" name="name" placeholder="Enter your name" required>
-        <input type="submit" value="Submit">
-    </form>
-
-    <footer>
-        <p>&copy; <?php echo date('Y'); ?> My PHP Page. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
+<?php include 'footer.php'; ?>

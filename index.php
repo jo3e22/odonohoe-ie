@@ -66,7 +66,7 @@ $currentDateTime = date('Y-m-d H:i:s');
     <h1>Welcome to My PHP Page!</h1>
     <p>Hello, <?php echo $name; ?>!</p>
     <p>Current Date and Time: <?php echo $currentDateTime; ?></p>
-    <a href="/cv/my_cv.pdf" target="_blank">Download My CV</a>
+    <p>Download my CV: <a href="uploads/my_cv.pdf" target="_blank">Click here</a></p>
 
     <form method="POST" action="">
         <input type="text" name="name" placeholder="Enter your name" required>

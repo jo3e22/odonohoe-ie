@@ -18,15 +18,14 @@
         <?php endif; ?>
         <form action="contact.php" method="post">
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
+            <input type="email" placeholder = "example@example.com" id="email" name="email" required>
+            <br>
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
             
             <button type="submit">Send Message</button>
         </form>
     </section>
-
 
 </main>
 

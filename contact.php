@@ -13,8 +13,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $entry = "Email: $email\nMessage: $message\n\n";
 
     // Store the message in a text file
-    $file = 'messages.txt'; // Make sure this file is writable
+    $file = '../secure_data/messages.txt'; // Outside of the web root for security and secured with .htaccess
+    if (!file_exists($file)) {
+        // Create the file if it doesn't exist
+        touch($file);
+    }
+    // Append the message to the file
+    // Use FILE_APPEND to append the message and LOCK_EX to prevent concurrent writes
+    // Ensure the file is writable
+    if (!is_writable($file)) {
+        die("File is not writable");
+    }
+    // Append the message to the file
     file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
+    // Check for errors
+    if (file_put_contents($file, $entry, FILE_APPEND | LOCK_EX) === false) {
+        die("Error writing to file");
+    }
+    // Optionally, you can send an email notification
+    // mail($email, "New Contact Form Submission", $message);
 
     // Redirect back to the contact page with a success message
     header("Location: index.php?success=1");

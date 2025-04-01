@@ -1,0 +1,16 @@
+/* social-media.css */
+
+.social-media {
+    list-style-type: none;
+    padding: 0;
+}
+
+.social-media li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.social-media a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}

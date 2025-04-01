@@ -1,0 +1,41 @@
+/* search.css */
+
+/* Style for the search container */
+.search-container {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+}
+
+/* Style for the search input */
+.search-container input[type="text"] {
+    padding: 5px; /* Padding inside the input field */
+    border: 1px solid var(--secondary-color);
+    border-radius: 4px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+    width: 150px; /* Set a specific width for the input */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+/* Change border color on focus */
+.search-container input[type="text"]:focus {
+    border-color: var(--primary-color);
+    outline: none; /* Remove default outline */
+}
+
+/* Style for the search button */
+.search-container button {
+    padding: 5px 10px; /* Padding inside the button */
+    background-color: var(--lightened-primary-color); /* Button background color */
+    color: var(--secondary-color); /* Button text color */
+    border: 1px solid var(--lightened-primary-color); /* Border matching the button color */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 14px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for background and border color */
+}
+
+/* Change button background color and border color on hover */
+.search-container button:hover {
+    background-color: var(--darkened-primary-color); /* Darker green on hover */
+    border-color: var(--darkened-primary-color); /* Darker border on hover */
+}

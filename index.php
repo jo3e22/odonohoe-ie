@@ -18,14 +18,23 @@
         <?php endif; ?>
         <form action="contact.php" method="post">
             <label for="email">Email:</label>
-            <input type="email" placeholder = "example@example.com" id="email" name="email" required>
+            <input type="email" placeholder="example@example.com" id="email" name="email" required>
             <br>
             <label for="message">Message:</label>
             <textarea id="message" name="message" required></textarea>
             
+            <!-- Hidden token input -->
+            <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
+
             <button type="submit">Send Message</button>
         </form>
     </section>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function() {
+            document.querySelector('button[type="submit"]').disabled = true;
+        });
+    </script>
 
 </main>
 

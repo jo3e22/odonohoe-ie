@@ -9,7 +9,7 @@
 /* Style for the search input */
 .search-container input[type="text"] {
     padding: 5px; /* Padding inside the input field */
-    border: 1px solid var(--secondary-color);
+    border: 1px solid var(--primary-color);
     border-radius: 4px; /* Rounded corners */
     font-size: 14px; /* Font size */
     width: 150px; /* Set a specific width for the input */
@@ -18,7 +18,7 @@
 
 /* Change border color on focus */
 .search-container input[type="text"]:focus {
-    border-color: var(--primary-color);
+    border-color: var(--secondary-color);
     outline: none; /* Remove default outline */
 }
 

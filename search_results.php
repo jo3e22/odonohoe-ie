@@ -1,6 +1,7 @@
 <?php
 $query = isset($_GET['query']) ? htmlspecialchars($_GET['query']) : '';
 ?>
+<?php include 'header.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +9,7 @@ $query = isset($_GET['query']) ? htmlspecialchars($_GET['query']) : '';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Results</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS if needed -->
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to external CSS if needed -->
 </head>
 <body>
 
@@ -31,3 +32,5 @@ $query = isset($_GET['query']) ? htmlspecialchars($_GET['query']) : '';
     <a href="index.php">Back to Search</a> <!-- Link back to the main page -->
 </body>
 </html>
+
+<?php include 'footer.php'; ?>

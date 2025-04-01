@@ -1,0 +1,8 @@
+/* header.css */
+
+header {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px 0;
+    text-align: center;
+}

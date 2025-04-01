@@ -3,7 +3,7 @@
 <main>    
     <section id="about">
         <h2>About Me</h2>
-        <p>Information about yourself, your background, and your interests.</p>
+        <p>Coming soon...</p>
     </section>
 
     <section id="cv">

@@ -1,0 +1,30 @@
+/* styles.css */
+
+/* Import the fonts.css file */
+@import url('fonts.css');
+@import url('header.css');
+@import url('footer.css');
+@import url('logo.css');
+@import url('search.css');
+@import url('navigation.css');
+@import url('form.css');
+@import url('social-media.css');
+
+:root {
+    --primary-color: #122620; /* Example primary color */
+    --darkened-primary-color: #0f1e1b; /* Darkened primary color */
+    --lightened-primary-color: #1f3b3a; /* Lightened primary color */
+    --secondary-color: #fffef9; /* Example secondary color */
+    --text-color: #333333; /* Example text color */
+    --background-color: #ffffff; /* Example background color */
+}
+
+body {
+    font-family: 'Open Dyslexic', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding: 20px;
+}

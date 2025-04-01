@@ -1,0 +1,39 @@
+/* navigation.css */
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Space between left and right items */
+    align-items: flex-start; /* Center items vertically */
+    padding: 10px;
+}
+
+nav .left-items {
+    display: flex; /* Use flexbox for left items */
+    align-items: flex-start; /* Center items vertically */
+}
+
+nav .right-items {
+    display: flex; /* Use flexbox for right items */
+    align-items: flex-start; /* Center items vertically */
+}
+
+nav .logo {
+    flex: 1; /* Allow the logo to take up space */
+    text-align: flex-start; /* Center the logo */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}

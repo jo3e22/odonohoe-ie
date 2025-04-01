@@ -1,0 +1,55 @@
+/* form.css */
+
+/* General styles for the form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px; /* Set a max width for the form */
+    margin: 20px auto; /* Center the form */
+    padding: 20px;
+    border: 1px solid var(--lightened-primary-color);; /* Light border around the form */
+    border-radius: 8px; /* Rounded corners */
+    background-color: var(--secondary-color); /* Light background color */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Style for input fields and textarea */
+input[type="email"],
+textarea {
+    padding: 10px; /* Padding inside the input fields */
+    margin-bottom: 15px; /* Space between fields */
+    border: 1px solid var(--lightened-primary-color); /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+/* Change border color on focus */
+input[type="email"]:focus,
+textarea:focus {
+    border-color: var(--darkened-primary-color); /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Style for the submit button */
+button {
+    padding: 10px; /* Padding inside the button */
+    background-color: var(--lightened-primary-color); /* Button background color */
+    color: var(--secondary-color); /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+/* Change button background color on hover */
+button:hover {
+    background-color: var(--darkened-primary-color); /* Darker green on hover */
+}
+
+/* Style for labels */
+label {
+    margin-bottom: 5px; /* Space between label and input */
+    font-weight: bold; /* Bold labels */
+}

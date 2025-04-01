@@ -1,5 +1,13 @@
 <?php
+session_start(); // Start the session to use session variables
+
+// Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check the CSRF token
+    if (!hash_equals($_SESSION['token'], $_POST['token'])) {
+        die("Invalid CSRF token");
+    }
+
     // Get the email and message from the form
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
     $message = filter_var(trim($_POST["message"]), FILTER_SANITIZE_STRING);
@@ -13,27 +21,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $entry = "Email: $email\nMessage: $message\n\n";
 
     // Store the message in a text file
-    $file = '../secure_data/messages.txt'; // Outside of the web root for security and secured with .htaccess
+    $file = '../secure_data/messages.txt'; // Adjust the path as necessary
     if (!file_exists($file)) {
         // Create the file if it doesn't exist
         touch($file);
     }
-    // Append the message to the file
-    // Use FILE_APPEND to append the message and LOCK_EX to prevent concurrent writes
+
     // Ensure the file is writable
     if (!is_writable($file)) {
         die("File is not writable");
     }
+
     // Append the message to the file
-    file_put_contents($file, $entry, FILE_APPEND | LOCK_EX);
-    // Check for errors
     if (file_put_contents($file, $entry, FILE_APPEND | LOCK_EX) === false) {
         die("Error writing to file");
     }
-    // Optionally, you can send an email notification
-    // mail($email, "New Contact Form Submission", $message);
 
-    // Redirect back to the contact page with a success message
+    // Redirect back to the index page with a success message
     header("Location: index.php?success=1");
     exit;
 }

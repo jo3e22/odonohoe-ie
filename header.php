@@ -18,7 +18,7 @@ if ($cookie_consent === 'accepted') {
 }
 // Include the user path tracking script only if the user has accepted cookies
 if ($cookie_consent === 'accepted') {
-    include 'track_user_path.js';
+    include 'track-user-path.js';
 }
 ?>
 

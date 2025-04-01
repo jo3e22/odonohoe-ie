@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cookie_consent'])) {
 ?>
 
 <div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #f1f1f1; padding: 20px; text-align: center;">
-    <p>This website uses cookies to enhance your browsing experience.</p>
+    <p>Cookies are optional, and used to enhance your browsing experience.</p>
     <button id="cookie-consent-btn-accept">Accept</button>
     <button id="cookie-consent-btn-decline">Decline</button>
 </div>

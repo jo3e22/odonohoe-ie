@@ -1,4 +1,4 @@
-// track_user_path.js
+// track-user-path.js
 document.addEventListener('click', function(event) {
     // Check if the clicked element is a link
     if (event.target.tagName.toLowerCase() === 'a') {
@@ -7,7 +7,7 @@ document.addEventListener('click', function(event) {
 
         // Send the clicked URL to the server using AJAX
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'track_path.php', true);
+        xhr.open('POST', '../track-path.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send('clicked_url=' + encodeURIComponent(clickedUrl));
     }
@@ -19,7 +19,7 @@ document.addEventListener('pageshow', function(event) {
 
     // Send the current URL to the server using AJAX
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'track_path.php', true);
+    xhr.open('POST', '../track-path.php', true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.send('current_url=' + encodeURIComponent(currentUrl));
 });

@@ -3,23 +3,31 @@
 nav {
     display: flex;
     justify-content: space-between; /* Space between left and right items */
-    align-items: flex-start; /* Center items vertically */
-    padding: 10px;
+    align-items: center; /* Center items vertically */
+    padding: 15px;
+    min-height: 60px; /* Set a minimum height for the navbar */
 }
 
 nav .left-items {
     display: flex; /* Use flexbox for left items */
-    align-items: flex-start; /* Center items vertically */
+    align-items: center; /* Center items vertically */
 }
 
 nav .right-items {
     display: flex; /* Use flexbox for right items */
-    align-items: flex-start; /* Center items vertically */
+    align-items: center; /* Center items vertically */
 }
 
-nav .logo {
+/*nav .logo {
     flex: 1; /* Allow the logo to take up space */
-    text-align: flex-start; /* Center the logo */
+/*    text-align: center; /* Center the logo */
+/*}*/
+nav .logo {
+    flex: 0 0 auto; /* Prevent the logo from growing or shrinking */
+    margin: 0 auto; /* Center the logo */
+    position: absolute; /* Position the logo absolutely */
+    left: 50%; /* Move to the center of the nav */
+    transform: translateX(-50%); /* Adjust to center the logo */
 }
 
 nav ul {
@@ -36,4 +44,52 @@ nav ul li {
 nav a {
     color: var(--secondary-color);
     text-decoration: none;
+}
+
+/* Add some padding to the body to prevent content from being hidden behind the fixed nav */
+body {
+    padding-top: 70px; /* Adjust this value based on the height of your nav */
+}
+
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+        padding: 5px; /* Reduce padding */
+    }
+
+    nav .logo {
+        position: relative; /* Change to relative positioning */
+        margin: 0; /* Remove margin */
+        transform: none; /* Remove transform */
+    }
+
+    nav .left-items,
+    nav .right-items {
+        width: 100%; /* Make left and right items full width */
+        justify-content: space-between; /* Space items evenly */
+        margin-top: 5px; /* Add some space between items */
+    }
+
+    nav .right-items {
+        justify-content: flex-end; /* Align right items to the end */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack list items vertically */
+        width: 100%; /* Make the list full width */
+        padding: 0; /* Remove padding */
+        margin: 0; /* Remove margin */
+    }
+
+    nav ul li {
+        margin: 5px 0; /* Add vertical spacing between items */
+    }
+
+    /* Adjust font sizes for mobile */
+    nav a {
+        font-size: 14px; /* Smaller font size for mobile */
+    }
 }

@@ -1,13 +1,17 @@
 function performSearch() {
-    const searchInput = document.getElementById('searchInput').value;
+    const searchInput = document.getElementById('searchInput').value.trim(); // Trim whitespace
+    const feedback = document.getElementById('feedback');
+    feedback.textContent = ''; // Clear previous feedback
+
     if (searchInput) {
-        // Here you can handle the search logic, e.g., redirecting to a search results page
-        // For demonstration, we'll just log the input to the console
         console.log("Searching for:", searchInput);
         
-        // Example: Redirect to a search results page (you can customize this)
-        // window.location.href = 'search.php?query=' + encodeURIComponent(searchInput);
+        // Redirect to a search results page
+        window.location.href = 'search_results.php?query=' + encodeURIComponent(searchInput);
+        
+        // Optionally, clear the input field after search
+        document.getElementById('searchInput').value = '';
     } else {
-        alert("Please enter a search term.");
+        feedback.textContent = "Please enter a search term.";
     }
 }

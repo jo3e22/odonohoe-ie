@@ -1,4 +1,6 @@
 <?php
+if(!defined('MAIN_INCLUDED'))
+    exit(1);
 session_start(); // Start the session to use session variables
 
 // Check if the form has been submitted

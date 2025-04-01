@@ -9,6 +9,17 @@ if (empty($_SESSION['token'])) {
 function getVersion($file) {
     return file_exists($file) ? filemtime($file) : time(); // Use the last modified time or current time if the file doesn't exist
 }
+
+include 'analytics.php';
+include 'cookie_consent.php';
+// Only use cookies if the user has accepted
+if ($cookie_consent === 'accepted') {
+    // Use cookies here
+}
+// Include the user path tracking script only if the user has accepted cookies
+if ($cookie_consent === 'accepted') {
+    include 'track_user_path.js';
+}
 ?>
 
 <!DOCTYPE html>

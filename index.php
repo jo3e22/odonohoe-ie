@@ -1,3 +1,4 @@
+<?php define('MAIN_INCLUDED', 1); ?>
 <?php include 'header.php'; ?>
 
 <main>    

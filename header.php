@@ -12,10 +12,6 @@ function getVersion($file) {
 
 include 'analytics.php';
 include 'cookie_consent.php';
-// Only use cookies if the user has accepted
-if ($cookie_consent === 'accepted') {
-    // Use cookies here
-}
 // Include the user path tracking script only if the user has accepted cookies
 if ($cookie_consent === 'accepted') {
     include 'track-user-path.js';

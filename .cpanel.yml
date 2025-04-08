@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/odonohoe/www.james.odonohoe.ie
+    - /bin/cp -R images $DEPLOYPATH

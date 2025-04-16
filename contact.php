@@ -3,12 +3,8 @@ if(!defined('MAIN_INCLUDED'))
     exit(1);
 session_start(); // Start the session to use session variables
 
-// Database connection details
-$host = getenv('DB_HOST');
-$username = getenv('DB_USERNAME');
-$password = getenv('DB_PASSWORD');
-$database = getenv('DB_NAME');
-$table = getenv('DB_TABLE');
+// Include the database connection details
+require_once '../secure_config/config.php';
 
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

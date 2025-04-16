@@ -3,6 +3,11 @@ if(!defined('MAIN_INCLUDED'))
     exit(1);
 session_start(); // Start the session to use session variables
 
+// Enable full error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check the CSRF token
@@ -43,5 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("Location: index.php?success=1");
     exit;
 }
-    
-?>
+
+// Generate a new CSRF token
+$_SESSION['token'] = bin2hex(random_bytes(32));

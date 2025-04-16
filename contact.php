@@ -1,6 +1,13 @@
 <?php
+// Enable full error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Check if the script is being included from the main file
 if(!defined('MAIN_INCLUDED'))
     exit(1);
+
 session_start(); // Start the session to use session variables
 
 // Include the database connection details
@@ -10,7 +17,8 @@ require_once '../secure_config/config.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check the CSRF token
     if (!hash_equals($_SESSION['token'], $_POST['token'])) {
-        die("Invalid CSRF token");
+        echo "Invalid CSRF token";
+        exit;
     }
 
     // Get the email and message from the form
@@ -74,4 +82,3 @@ $_SESSION['token'] = bin2hex(random_bytes(32));
     </form>
 </body>
 </html>
-

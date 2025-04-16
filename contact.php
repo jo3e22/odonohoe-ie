@@ -3,6 +3,13 @@ if(!defined('MAIN_INCLUDED'))
     exit(1);
 session_start(); // Start the session to use session variables
 
+// Database connection details
+$host = getenv('DB_HOST');
+$username = getenv('DB_USERNAME');
+$password = getenv('DB_PASSWORD');
+$database = getenv('DB_NAME');
+$table = getenv('DB_TABLE');
+
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check the CSRF token
@@ -19,28 +26,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Invalid email format");
     }
 
-    // Prepare the message to be stored
-    $entry = "Email: $email\nMessage: $message\n\n";
-
-    // Store the message in a text file
-    $file = '../secure_data/messages.txt'; // Adjust the path as necessary
-    if (!file_exists($file)) {
-        // Create the file if it doesn't exist
-        touch($file);
+    // Connect to the database
+    $conn = new mysqli($host, $username, $password, $database);
+    if ($conn->connect_error) {
+        die("Database connection failed: " . $conn->connect_error);
     }
 
-    // Ensure the file is writable
-    if (!is_writable($file)) {
-        die("File is not writable");
+    // Prepare the SQL query
+    $stmt = $conn->prepare("INSERT INTO $table (email, message, created_at, session_token) VALUES (?, ?, ?, ?)");
+    $created_at = date('Y-m-d H:i:s');
+    $stmt->bind_param("ssss", $email, $message, $created_at, $_SESSION['token']);
+
+    // Execute the query
+    if ($stmt->execute()) {
+        // Redirect back to the index page with a success message
+        header("Location: index.php?success=1");
+        exit;
+    } else {
+        die("Error storing message: " . $stmt->error);
     }
 
-    // Append the message to the file
-    if (file_put_contents($file, $entry, FILE_APPEND | LOCK_EX) === false) {
-        die("Error writing to file");
-    }
-
-    // Redirect back to the index page with a success message
-    header("Location: index.php?success=1");
-    exit;
+    // Close the database connection
+    $stmt->close();
+    $conn->close();
 }
 ?>
+

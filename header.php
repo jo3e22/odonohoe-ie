@@ -48,9 +48,9 @@ if (file_exists($lang_file)) {
         <nav>
             <div class="left-items">
                 <ul>
-                    <li><a href="#cv">CV</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
+                    <li><a href="#cv"><?php echo $lang['cv-short']; ?></a></li>
+                    <li><a href="#about"><?php echo $lang['about']; ?></a></li>
+                    <li><a href="#contact"><?php echo $lang['contact']; ?></a></li>
                 </ul>
             </div>
             
@@ -59,7 +59,7 @@ if (file_exists($lang_file)) {
             </div>
 
             <div class="right-items">
-                <button id="font-toggle">Toggle Font</button> <!-- Button to toggle fonts -->
+                <button id="font-toggle"><?php echo $lang['header-toggle-font']; ?></button> <!-- Button to toggle fonts -->
 
                 <section id="languageSection">
                     <div class="language-switcher">
@@ -75,7 +75,7 @@ if (file_exists($lang_file)) {
                 <section id="searchSection">
                     <div class="search-container">
                         <input type="text" id="searchInput" placeholder="Search..." required>
-                        <button id="searchButton" onclick="performSearch()">Search</button>
+                        <button id="searchButton" onclick="performSearch()"><?php echo $lang['header-search']; ?></button>
                     </div>
                     <div id="feedback"></div>
                 </section>

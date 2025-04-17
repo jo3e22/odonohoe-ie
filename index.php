@@ -8,7 +8,7 @@
     </section>
 
     <section id="cv">
-        <h2><?php echo $lang['cv']; ?></h2>
+        <h2><?php echo $lang['cv-long']; ?></h2>
         <p><?php echo $lang['cv-paragraph']; ?><a href="uploads/my_cv.pdf" target="_blank"><?php echo $lang['cv-click']; ?></a></p>
     </section>
     
@@ -18,10 +18,10 @@
             <p> <?php echo $lang['contact-success']; ?> </p>
         <?php endif; ?>
         <form action="contact.php" method="post">
-            <label for="email"><?php echo $lang['contact-email']; ?>:</label>
+            <label for="email"><?php echo $lang['contact-email']; ?></label>
             <input type="email" placeholder=<?php echo $lang['contact-email-placeholder']; ?> id="email" name="email" required>
             <br>
-            <label for="message"><?php echo $lang['contact-message']; ?>:</label>
+            <label for="message"><?php echo $lang['contact-message']; ?></label>
             <textarea id="message" name="message" required></textarea>
             
             <!-- Hidden token input -->

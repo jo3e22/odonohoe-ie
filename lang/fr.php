@@ -1,5 +1,9 @@
 <?php
 $lang = [
+    // Header section
+    'header-search' => 'Rechercher',
+    'header-search-placeholder' => 'Rechercher...',
+    'header-toggle-font' => 'Changer de police',
     // Welcome section
     'welcome' => 'Bienvenue sur mon site web!',
     // About section
@@ -13,7 +17,8 @@ $lang = [
     'contact-success' => 'Merci pour votre message! Je vous répondrai bientôt.',
     'contact-invaled-email' => 'Invalid email format. Please enter a valid email address.',
     // CV section
-    'cv' => 'Curriculum Vitae',
+    'cv-short' => 'CV',
+    'cv-long' => 'Curriculum Vitae',
     'cv-paragraph' => 'Download my CV : ',
     'cv-click' => 'Click here',
     // Footer section

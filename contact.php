@@ -3,6 +3,11 @@ if(!defined('MAIN_INCLUDED'))
     exit(1);
 session_start(); // Start the session to use session variables
 
+// Enable full error reporting
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check the CSRF token
@@ -23,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $entry = "Email: $email\nMessage: $message\n\n";
 
     // Store the message in a text file
-    $file = '../secure_data/messages.txt'; // Adjust the path as necessary
+    $file = '../secure_config/messages.txt';
     if (!file_exists($file)) {
         // Create the file if it doesn't exist
         touch($file);
@@ -38,9 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (file_put_contents($file, $entry, FILE_APPEND | LOCK_EX) === false) {
         die("Error writing to file");
     }
-
+    
     // Redirect back to the index page with a success message
     header("Location: index.php?success=1");
     exit;
 }
-?>
+
+// Generate a new CSRF token
+$_SESSION['token'] = bin2hex(random_bytes(32));

@@ -1,0 +1,22 @@
+name: Update Timestamp
+
+on:
+  push:
+    branches:
+      - main # or the branch you want to trigger the workflow
+
+jobs:
+  timestamp-update:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Update Timestamp
+      run: |
+        node timestamp-update.js
+        git config user.name 'GitHub Actions Bot'
+        git config user.email 'github-actions[bot]@users.noreply.github.com'
+        git add timestamp-update.txt
+        git commit -m 'Update timestamp'
+        git push

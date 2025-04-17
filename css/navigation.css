@@ -48,33 +48,40 @@ body {
 
 /* Styles for mobile devices */
 body.mobile nav {
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between the logo and menu */
     padding: 10px; /* Add padding around the nav */
     width: 100%; /* Ensure the nav spans the full width */
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 body.mobile nav .logo {
-    margin-bottom: 15px; /* Add spacing below the logo */
-    text-align: center; /* Center the logo */
+    margin: 0; /* Remove unnecessary margins */
+    text-align: left; /* Align the logo to the left */
 }
 
 body.mobile nav .logo img {
     max-width: 100%; /* Ensure the logo scales properly */
-    height: auto; /* Maintain aspect ratio */
+    height: 50px; /* Adjust the height of the logo */
+}
+
+body.mobile nav .mobile-menu {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align the menu to the right */
 }
 
 body.mobile nav .mobile-menu ul {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Align menu items in a row */
     list-style-type: none; /* Remove bullet points */
     padding: 0; /* Remove default padding */
     margin: 0; /* Remove default margin */
-    text-align: center; /* Center the menu items */
 }
 
 body.mobile nav .mobile-menu ul li {
-    margin: 10px 0; /* Add spacing between menu items */
+    margin: 0 10px; /* Add horizontal spacing between menu items */
 }
 
 body.mobile nav .mobile-menu ul li a {

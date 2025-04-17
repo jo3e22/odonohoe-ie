@@ -55,7 +55,7 @@ body.mobile nav {
 
 body.mobile nav .logo {
     position: relative; /* Change to relative positioning */
-    margin: 0, auto; /* Remove margin */
+    margin: 0; /* Remove margin */
     transform: none; /* Remove transform */
 }
 

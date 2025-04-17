@@ -21,6 +21,9 @@ if (isset($_COOKIE['cookie_consent'])) {
     $cookie_consent = 'declined';
 }
 
+// Set the language based on the cookie or default to English
+$language = isset($_COOKIE['language']) ? $_COOKIE['language'] : 'en';
+$lang_file = "lang/{$language}.php";
 if (file_exists($lang_file)) {
     include $lang_file;
 } else {

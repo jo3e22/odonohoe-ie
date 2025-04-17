@@ -55,14 +55,15 @@ body.mobile nav {
 
 body.mobile nav .logo {
     position: relative; /* Change to relative positioning */
-    margin: 0; /* Remove margin */
+    margin: 0, auto; /* Remove margin */
     transform: none; /* Remove transform */
 }
 
 body.mobile nav .left-items,
 body.mobile nav .right-items {
     width: 100%; /* Make left and right items full width */
-    justify-content: space-between; /* Space items evenly */
+    justify-content: center; /* Center items horizontally */
+    flex: 1; /* Allow equal space for left and right items */
     margin-top: 5px; /* Add some space between items */
 }
 

@@ -53,7 +53,8 @@ if (file_exists($lang_file)) {
                     <li><a href="#contact">Contact Me</a></li>
                 </ul>
             </div>
-            <<div class="logo">
+            
+            <div class="logo">
                 <a href="index.php"><img src="images/logo-122620-fffef9.png" alt="My Website Logo" style="height:100px;"></a>
             </div>
 

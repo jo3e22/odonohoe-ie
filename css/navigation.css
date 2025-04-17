@@ -67,7 +67,7 @@ body.mobile nav .logo {
 body.mobile nav .left-items,
 body.mobile nav .right-items {
     width: 100%; /* Make left and right items full width */
-    justify-content: center; /* Center items horizontally */
+    justify-content: left; /* Center items horizontally */
     flex: 1; /* Allow equal space for left and right items */
     margin-top: 5px; /* Add some space between items */
 }

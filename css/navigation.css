@@ -49,15 +49,19 @@ body {
 /* Styles for mobile devices */
 body.mobile nav {
     flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align items to the start */
+    align-items: center; /* Center all items horizontally */
     padding: 7px; /* Reduce padding */
 }
 
 body.mobile nav .logo {
     position: relative; /* Use relative positioning */
-    margin: 0 auto; /* Center the logo horizontally */
+    margin: 0; /* Remove unnecessary margins */
     transform: none; /* Remove transform */
     text-align: center; /* Ensure the logo is centered */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the logo horizontally */
+    align-items: center; /* Center the logo vertically */
+    width: 100%; /* Ensure the logo spans the full width */
 }
 
 body.mobile nav .left-items,

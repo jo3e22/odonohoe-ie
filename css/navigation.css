@@ -49,25 +49,22 @@ body {
 /* Styles for mobile devices */
 body.mobile nav {
     flex-direction: column; /* Stack items vertically */
-    align-items: left; /* Align all items to the left */
+    align-items: centre; /* Align all items to the left */
     padding: 7px; /* Reduce padding */
 }
 
 body.mobile nav .logo {
-    position: relative; /* Use relative positioning */
-    margin: 0; /* Remove unnecessary margins */
-    transform: none; /* Remove transform */
-    text-align: left; /* Align the logo to the left */
-    display: block; /* Ensure the logo behaves like a block element */
-    justify-content: flex-start; /* Align the logo to the left */
-    align-items: left; /* Center the logo vertically */
-    width: auto; /* Ensure the logo does not stretch */
+    flex: 0 0 auto; /* Prevent the logo from growing or shrinking */
+    margin: 0 auto; /* Center the logo */
+    position: absolute; /* Position the logo absolutely */
+    left: 50%; /* Move to the center of the nav */
+    transform: translateX(-50%); /* Adjust to center the logo */
 }
 
 body.mobile nav .left-items,
 body.mobile nav .right-items {
     width: 100%; /* Make left and right items full width */
-    justify-content: left; /* Center items horizontally */
+    justify-content: center; /* Center items horizontally */
     flex: 1; /* Allow equal space for left and right items */
     margin-top: 5px; /* Add some space between items */
 }

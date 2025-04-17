@@ -62,14 +62,12 @@ if (file_exists($lang_file)) {
 
                 <section id="languageSection">
                     <div class="language-switcher">
-                        <form id="language-form" method="post" action="set_language.php">
-                            <label for="language-select">Language:</label>
-                            <select id="language-select" name="language" onchange="document.getElementById('language-form').submit();">
-                                <option value="en" <?php echo $language === 'en' ? 'selected' : ''; ?>>English</option>
-                                <option value="fr" <?php echo $language === 'fr' ? 'selected' : ''; ?>>Français</option>
-                                <!-- Add more languages as needed -->
-                            </select>
-                        </form>
+                        <label for="language-select">Language:</label>
+                        <select id="language-select" name="language" onchange="setLanguage(this.value)">
+                            <option value="en" <?php echo $language === 'en' ? 'selected' : ''; ?>>English</option>
+                            <option value="fr" <?php echo $language === 'fr' ? 'selected' : ''; ?>>Français</option>
+                            <!-- Add more languages as needed -->
+                        </select>
                     </div>
                 </section>
 
@@ -87,3 +85,4 @@ if (file_exists($lang_file)) {
     
     <script src="js/search.js?v=<?php echo getVersion('search.js'); ?>"></script>
     <script src="js/font-toggle.js?v=<?php echo getVersion('font-toggle.js'); ?>"></script>
+    <script src="js/language-switcher.js?v=<?php echo getVersion('language-switcher.js'); ?>"></script>

@@ -48,42 +48,43 @@ body {
 
 /* Styles for mobile devices */
 body.mobile nav {
+    display: flex;
     flex-direction: column; /* Stack items vertically */
-    align-items: centre; /* Align all items to the left */
-    padding: 7px; /* Reduce padding */
+    align-items: center; /* Center items horizontally */
+    padding: 10px; /* Add padding around the nav */
+    width: 100%; /* Ensure the nav spans the full width */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 body.mobile nav .logo {
-    flex: 0 0 auto; /* Prevent the logo from growing or shrinking */
-    margin: 0 auto; /* Center the logo */
-    position: absolute; /* Position the logo absolutely */
-    left: 50%; /* Move to the center of the nav */
-    transform: translateX(-50%); /* Adjust to center the logo */
+    margin-bottom: 15px; /* Add spacing below the logo */
+    text-align: center; /* Center the logo */
 }
 
-body.mobile nav .left-items,
-body.mobile nav .right-items {
-    width: 100%; /* Make left and right items full width */
-    justify-content: center; /* Center items horizontally */
-    flex: 1; /* Allow equal space for left and right items */
-    margin-top: 5px; /* Add some space between items */
+body.mobile nav .logo img {
+    max-width: 100%; /* Ensure the logo scales properly */
+    height: auto; /* Maintain aspect ratio */
 }
 
-body.mobile nav .right-items {
-    justify-content: flex-end; /* Align right items to the end */
+body.mobile nav .mobile-menu ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center the menu items */
 }
 
-body.mobile nav ul {
-    flex-direction: column; /* Stack list items vertically */
-    width: 100%; /* Make the list full width */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
+body.mobile nav .mobile-menu ul li {
+    margin: 10px 0; /* Add spacing between menu items */
 }
 
-body.mobile nav ul li {
-    margin: 5px 0; /* Add vertical spacing between items */
+body.mobile nav .mobile-menu ul li a {
+    text-decoration: none; /* Remove underline */
+    color: var(--primary-color); /* Use your primary color */
+    font-size: 16px; /* Adjust font size for readability */
+    font-weight: bold; /* Make the text bold */
+    transition: color 0.3s; /* Add a hover effect */
 }
 
-body.mobile nav a {
-    font-size: 14px; /* Smaller font size for mobile */
+body.mobile nav .mobile-menu ul li a:hover {
+    color: var(--secondary-color); /* Change color on hover */
 }

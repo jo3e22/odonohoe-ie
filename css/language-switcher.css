@@ -1,9 +1,26 @@
+/* Style for the language switcher container */
 .language-switcher {
-    margin: 5px;
-    display: flex;
+    display: inline-block; /* Keep it inline */
+    margin: 0; /* Remove extra margins */
+    padding: 0; /* Remove extra padding */
 }
 
+/* Style for the dropdown select */
 .language-switcher select {
-    padding: 5px;
-    font-size: 14px;
+    padding: 4px 8px; /* Smaller padding inside the dropdown */
+    font-size: 14px; /* Adjust font size */
+    border: 1px solid var(--primary-color); /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    background-color: var(--lightened-primary-color); /* Background color */
+    color: var(--secondary-color); /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    width: auto; /* Adjust width to fit content */
+    height: auto; /* Adjust height to fit content */
+}
+
+/* Change border and background color on focus */
+.language-switcher select:focus {
+    border-color: var(--secondary-color); /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+    background-color: var(--darkened-primary-color); /* Slightly darker background */
 }

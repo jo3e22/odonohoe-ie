@@ -4,6 +4,12 @@
 }
 
 .language-switcher select {
-    padding: 5px;
     font-size: 14px;
+    padding: 8px 10px; /* Padding inside the button */
+    background-color: var(--secondary-color); /* Button background color */
+    color: var(--primary-color); /* Button text color */
+    border: 1px solid var(--lightened-primary-color); /* Border matching the button color */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for background and border color */
 }

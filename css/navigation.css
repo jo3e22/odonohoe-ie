@@ -49,7 +49,7 @@ body {
 /* Styles for mobile devices */
 body.mobile nav {
     flex-direction: column; /* Stack items vertically */
-    align-items: flex-start; /* Align all items to the left */
+    align-items: left; /* Align all items to the left */
     padding: 7px; /* Reduce padding */
 }
 

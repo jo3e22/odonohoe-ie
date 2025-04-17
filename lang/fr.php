@@ -19,7 +19,7 @@ $lang = [
     // CV section
     'cv-short' => 'CV',
     'cv-long' => 'Curriculum Vitae',
-    'cv-paragraph' => 'Download my CV : ',
+    'cv-paragraph' => 'Télécharger mon CV : ',
     'cv-click' => 'Click here',
     // Footer section
     'footer-h3' => 'Connectez-vous avec moi',

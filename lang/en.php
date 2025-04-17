@@ -35,7 +35,7 @@ $lang = [
     'search-results-title' => 'Search Results',
     'search-results-query' => 'Results for:',
     'search-results-no-results' => 'No results found.',
-    'search-results-display' => 'Affichage des résultats pour',
-    'search-results-back' => 'Back to Searche',
+    'search-results-display' => 'Displaying results for ',
+    'search-results-back' => 'Back to Search',
 ];
 ?>

@@ -74,7 +74,7 @@ if (file_exists($lang_file)) {
                 <!-- Search Section -->
                 <section id="searchSection">
                     <div class="search-container">
-                        <input type="text" id="searchInput" placeholder="Search..." required>
+                        <input type="text" id="searchInput" placeholder=<?php echo $lang['header-search-placeholder']; ?> required>
                         <button id="searchButton" onclick="performSearch()"><?php echo $lang['header-search']; ?></button>
                     </div>
                     <div id="feedback"></div>

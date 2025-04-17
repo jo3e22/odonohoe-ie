@@ -26,5 +26,16 @@ $lang = [
     'footer-linkedin' => 'LinkedIn',
     'footer-github' => 'GitHub',
     'footer-copyright' => '&copy; 2025 James O\'Donohoe. Tous droits réservés.',
+    // Cookies Banner
+    'cookies-message' => 'Les cookies sont optionnels et utilisés pour améliorer votre expérience de navigation.',
+    'cookies-accept' => 'Autoriser',
+    'cookies-decline' => 'Refuser',
+    'cookies-preference' => 'Préférence utilisateur enregistrée.',
+    // Search Results
+    'search-results-title' => 'Résultats de la recherche',
+    'search-results-query' => 'Résultats pour :',
+    'search-results-no-results' => 'Aucun résultat trouvé.',
+    'search-results-display' => 'Affichage des résultats pour ',
+    'search-results-back' => 'Retour à la recherche',
 ];
 ?>

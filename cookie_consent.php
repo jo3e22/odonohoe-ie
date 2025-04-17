@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cookie_consent'])) {
         setcookie('language', $language, time() + (86400 * 30), '/'); // Expires in 30 days
     }
 
-    echo json_encode(['status' => 'success', 'message' => 'Cookie preference saved.']);
+    echo json_encode(['status' => 'success', 'message' => $lang['cookies-preference']]);
     exit;
 }
 
@@ -24,9 +24,9 @@ if (isset($_COOKIE['cookie_consent'])) {
 
 <?php if (!isset($_COOKIE['cookie_consent'])): ?>
 <div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #f1f1f1; padding: 20px; text-align: center;">
-    <p>Cookies are optional, and used to enhance your browsing experience.</p>
-    <button id="cookie-consent-btn-accept">Accept</button>
-    <button id="cookie-consent-btn-decline">Decline</button>
+    <p><?php echo $lang['cookies-message']; ?></p>
+    <button id="cookie-consent-btn-accept"><?php echo $lang['cookies-accept']; ?></button>
+    <button id="cookie-consent-btn-decline"><?php echo $lang['cookies-decline']; ?></button>
 </div>
 <?php endif; ?>
 

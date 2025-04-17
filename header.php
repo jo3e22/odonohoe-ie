@@ -56,19 +56,24 @@ if (file_exists($lang_file)) {
             <<div class="logo">
                 <a href="index.php"><img src="images/logo-122620-fffef9.png" alt="My Website Logo" style="height:100px;"></a>
             </div>
+
             <div class="right-items">
                 <button id="font-toggle">Toggle Font</button> <!-- Button to toggle fonts -->
+
+                <section id="languageSection">
+                    <div class="language-switcher">
+                        <form id="language-form" method="post" action="set_language.php">
+                            <label for="language-select">Language:</label>
+                            <select id="language-select" name="language" onchange="document.getElementById('language-form').submit();">
+                                <option value="en" <?php echo $language === 'en' ? 'selected' : ''; ?>>English</option>
+                                <option value="fr" <?php echo $language === 'fr' ? 'selected' : ''; ?>>Français</option>
+                                <!-- Add more languages as needed -->
+                            </select>
+                        </form>
+                    </div>
+                </section>
+
                 <!-- Search Section -->
-                 <div class="language-switcher">
-                    <form id="language-form" method="post" action="set_language.php">
-                        <label for="language-select">Language:</label>
-                        <select id="language-select" name="language" onchange="document.getElementById('language-form').submit();">
-                            <option value="en" <?php echo $language === 'en' ? 'selected' : ''; ?>>English</option>
-                            <option value="fr" <?php echo $language === 'fr' ? 'selected' : ''; ?>>Français</option>
-                            <!-- Add more languages as needed -->
-                        </select>
-                    </form>
-                </div>
                 <section id="searchSection">
                     <div class="search-container">
                         <input type="text" id="searchInput" placeholder="Search..." required>

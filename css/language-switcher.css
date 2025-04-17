@@ -1,6 +1,6 @@
 /* Style for the language switcher container */
 .language-switcher {
-    display: inline-block; /* Keep it inline */
+    display: flex; /* Keep it inline */
     margin: 0; /* Remove extra margins */
     padding: 0; /* Remove extra padding */
 }

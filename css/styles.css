@@ -9,6 +9,7 @@
 @import url('navigation.css');
 @import url('form.css');
 @import url('social-media.css');
+@import url('language-switcher.css');
 
 :root {
     --primary-color: #122620; /* Example primary color */

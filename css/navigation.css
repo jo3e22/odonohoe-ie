@@ -50,13 +50,14 @@ body {
 body.mobile nav {
     flex-direction: column; /* Stack items vertically */
     align-items: flex-start; /* Align items to the start */
-    padding: 5px; /* Reduce padding */
+    padding: 7px; /* Reduce padding */
 }
 
 body.mobile nav .logo {
-    position: relative; /* Change to relative positioning */
-    margin: 0; /* Remove margin */
+    position: relative; /* Use relative positioning */
+    margin: 0 auto; /* Center the logo horizontally */
     transform: none; /* Remove transform */
+    text-align: center; /* Ensure the logo is centered */
 }
 
 body.mobile nav .left-items,

@@ -17,6 +17,7 @@
     --secondary-color: #fffef9; /* Example secondary color */
     --text-color: #333333; /* Example text color */
     --background-color: #ffffff; /* Example background color */
+    --mobile-footer-color: #00bfff; /* Mobile footer color for demonstrating the change */
 }
 
 body {

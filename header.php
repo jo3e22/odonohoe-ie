@@ -10,6 +10,13 @@ function getVersion($file) {
     return file_exists($file) ? filemtime($file) : time(); // Use the last modified time or current time if the file doesn't exist
 }
 
+// Detect if the user is on a mobile device
+function isMobile() {
+    return preg_match('/Mobi|Android|iPhone|iPad|iPod/i', $_SERVER['HTTP_USER_AGENT']);
+}
+// Set a variable to determine the layout
+$isMobile = isMobile();
+
 include 'analytics.php';
 include 'cookie_consent.php';
 // Include the user path tracking script only if the user has accepted cookies
@@ -26,7 +33,7 @@ if ($cookie_consent === 'accepted') {
     <title>James O'Donohoe - Personal Website</title>
     <link rel="stylesheet" href="css/styles.css?v=<?php echo getVersion('styles.css'); ?>">
 </head>
-<body>
+<body class="<?php echo $isMobile ? 'mobile' : 'desktop'; ?>">
     <header>
         <nav>
             <div class="left-items">

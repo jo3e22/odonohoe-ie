@@ -1,8 +1,15 @@
 /* footer.css */
 
+/* Default footer styles (desktop) */
 footer {
     text-align: center;
     padding: 20px 0;
-    background-color: var(--primary-color);
+    background-color: var(--primary-color); /* Desktop background color */
+    color: var(--secondary-color);
+}
+
+/* Mobile-specific footer styles */
+body.mobile footer, main.mobile footer {
+    background-color: var(--mobile-footer-color); /* Mobile background color */
     color: var(--secondary-color);
 }

@@ -1,13 +1,4 @@
 <?php define('MAIN_INCLUDED', 1);?>
-<?php
-// Detect if the user is on a mobile device
-function isMobile() {
-    return preg_match('/Mobi|Android|iPhone|iPad|iPod/i', $_SERVER['HTTP_USER_AGENT']);
-}
-
-// Set a variable to determine the layout
-$isMobile = isMobile();
-?>
 <?php include 'header.php'; ?>
 
 <main class="<?php echo $isMobile ? 'mobile' : 'desktop'; ?>">      
@@ -45,7 +36,7 @@ $isMobile = isMobile();
             document.querySelector('button[type="submit"]').disabled = true;
         });
     </script>
-    
+
 </main>
 
 <?php include 'footer.php'; ?>

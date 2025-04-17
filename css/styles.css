@@ -25,6 +25,20 @@ body {
     padding: 0;
 }
 
-main {
+main.desktop {
+    font-size: 16px;
     padding: 20px;
+}
+
+main.mobile {
+    font-size: 14px;
+    padding: 10px;
+}
+
+main.desktop section {
+    margin-bottom: 40px 0;
+}
+
+main.mobile section {
+    margin-bottom: 20px;
 }

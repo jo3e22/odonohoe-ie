@@ -60,7 +60,7 @@ body.mobile nav .logo {
     text-align: left; /* Align the logo to the left */
     display: block; /* Ensure the logo behaves like a block element */
     justify-content: flex-start; /* Align the logo to the left */
-    align-items: center; /* Center the logo vertically */
+    align-items: left; /* Center the logo vertically */
     width: auto; /* Ensure the logo does not stretch */
 }
 

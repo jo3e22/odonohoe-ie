@@ -20,6 +20,12 @@ if (isset($_COOKIE['cookie_consent'])) {
 } else {
     $cookie_consent = 'declined';
 }
+
+if (file_exists($lang_file)) {
+    include $lang_file;
+} else {
+    include "lang/en.php"; // Fallback to English
+}
 ?>
 
 <?php if (!isset($_COOKIE['cookie_consent'])): ?>

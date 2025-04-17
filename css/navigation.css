@@ -61,7 +61,7 @@ body.mobile nav .logo {
     display: flex; /* Use flexbox for centering */
     justify-content: center; /* Center the logo horizontally */
     align-items: center; /* Center the logo vertically */
-    width: 100%; /* Ensure the logo spans the full width */
+
 }
 
 body.mobile nav .left-items,

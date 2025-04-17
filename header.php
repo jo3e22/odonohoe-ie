@@ -62,7 +62,6 @@ if (file_exists($lang_file)) {
 
                 <section id="languageSection">
                     <div class="language-switcher">
-                        <label for="language-select">Language:</label>
                         <select id="language-select" name="language" onchange="setLanguage(this.value)">
                             <option value="en" <?php echo $language === 'en' ? 'selected' : ''; ?>>English</option>
                             <option value="fr" <?php echo $language === 'fr' ? 'selected' : ''; ?>>Français</option>

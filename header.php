@@ -19,9 +19,19 @@ $isMobile = isMobile();
 
 include 'analytics.php';
 include 'cookie_consent.php';
-// Include the user path tracking script only if the user has accepted cookies
+// Check if cookies have ever been accepted
+$cookie_consent = isset($_COOKIE['cookie_consent']) ? $_COOKIE['cookie_consent'] : 'declined';
 if ($cookie_consent === 'accepted') {
-    include 'track-user-path.js';
+    echo '<script src="/js/track-user-path.js"></script>';
+}
+
+// Set the language based on the cookie or default to English
+$language = isset($_COOKIE['language']) ? $_COOKIE['language'] : 'en';
+$lang_file = "lang/{$language}.php";
+if (file_exists($lang_file)) {
+    include $lang_file;
+} else {
+    include "lang/en.php"; // Fallback to English
 }
 ?>
 

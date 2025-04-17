@@ -1,8 +1,12 @@
 /* Style for the language switcher container */
 .language-switcher {
     display: flex; /* Keep it inline */
-    margin: 0; /* Remove extra margins */
-    padding: 0; /* Remove extra padding */
+    margin: 0 !important; /* Remove extra margins */
+    padding: 0 !important; /* Remove extra padding */
+    box-shadow: none !important; /* Remove any shadow */
+    border: none !important; /* Remove any border */
+    background: transparent !important; /* Ensure no background color */
+    position: relative; /* Position the container for custom styling */
 }
 
 /* Style for the dropdown select */
@@ -16,11 +20,22 @@
     cursor: pointer; /* Pointer cursor on hover */
     width: auto; /* Adjust width to fit content */
     height: auto; /* Adjust height to fit content */
+    -webkit-appearance: none !important; /* Remove default styling in WebKit browsers */
+    -moz-appearance: none !important; /* Remove default styling in Firefox */
+    appearance: none !important; /* Standard property to remove default styling */
+    box-shadow: none !important; /* Remove any default shadow */
+    outline: none !important; /* Remove the default outline */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23ffffff" d="M2 0L0 2h4z"/></svg>'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Position the arrow */
+    background-size: 10px 10px; /* Size of the arrow */
+    padding-right: 25px; /* Add space for the arrow */
 }
 
 /* Change border and background color on focus */
 .language-switcher select:focus {
     border-color: var(--secondary-color); /* Highlight border on focus */
-    outline: none; /* Remove default outline */
+    outline: none !important; /* Force removal of focus outline */
+    box-shadow: none !important; /* Remove any focus shadow */
     background-color: var(--darkened-primary-color); /* Slightly darker background */
 }

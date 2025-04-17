@@ -3,17 +3,17 @@
 
 <main class="<?php echo $isMobile ? 'mobile' : 'desktop'; ?>">      
     <section id="about">
-        <h2>About Me</h2>
-        <p>Coming soon...</p>
+        <h2><?php echo $lang['about']; ?></h2>
+        <p><?php echo $lang['welcome']; ?></p>
     </section>
 
     <section id="cv">
-        <h2>Curriculum Vitae</h2>
+        <h2><?php echo $lang['cv']; ?></h2>
         <p>Download my CV: <a href="uploads/my_cv.pdf" target="_blank">Click here</a></p>
     </section>
     
     <section id="contact">
-        <h2>Contact Me</h2>
+        <h2><?php echo $lang['contact']; ?></h2>
         <?php if (isset($_GET['success'])): ?>
             <p>Thank you for your message! I will get back to you soon.</p>
         <?php endif; ?>

@@ -1,5 +1,4 @@
 /* navigation.css */
-
 nav {
     display: flex;
     justify-content: space-between; /* Space between left and right items */
@@ -18,10 +17,6 @@ nav .right-items {
     align-items: center; /* Center items vertically */
 }
 
-/*nav .logo {
-    flex: 1; /* Allow the logo to take up space */
-/*    text-align: center; /* Center the logo */
-/*}*/
 nav .logo {
     flex: 0 0 auto; /* Prevent the logo from growing or shrinking */
     margin: 0 auto; /* Center the logo */
@@ -51,45 +46,41 @@ body {
     padding-top: 70px; /* Adjust this value based on the height of your nav */
 }
 
+/* Styles for mobile devices */
+body.mobile nav {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the start */
+    padding: 5px; /* Reduce padding */
+}
 
-/* Media Queries for Mobile Devices */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the start */
-        padding: 5px; /* Reduce padding */
-    }
+body.mobile nav .logo {
+    position: relative; /* Change to relative positioning */
+    margin: 0; /* Remove margin */
+    transform: none; /* Remove transform */
+}
 
-    nav .logo {
-        position: relative; /* Change to relative positioning */
-        margin: 0; /* Remove margin */
-        transform: none; /* Remove transform */
-    }
+body.mobile nav .left-items,
+body.mobile nav .right-items {
+    width: 100%; /* Make left and right items full width */
+    justify-content: space-between; /* Space items evenly */
+    margin-top: 5px; /* Add some space between items */
+}
 
-    nav .left-items,
-    nav .right-items {
-        width: 100%; /* Make left and right items full width */
-        justify-content: space-between; /* Space items evenly */
-        margin-top: 5px; /* Add some space between items */
-    }
+body.mobile nav .right-items {
+    justify-content: flex-end; /* Align right items to the end */
+}
 
-    nav .right-items {
-        justify-content: flex-end; /* Align right items to the end */
-    }
+body.mobile nav ul {
+    flex-direction: column; /* Stack list items vertically */
+    width: 100%; /* Make the list full width */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
 
-    nav ul {
-        flex-direction: column; /* Stack list items vertically */
-        width: 100%; /* Make the list full width */
-        padding: 0; /* Remove padding */
-        margin: 0; /* Remove margin */
-    }
+body.mobile nav ul li {
+    margin: 5px 0; /* Add vertical spacing between items */
+}
 
-    nav ul li {
-        margin: 5px 0; /* Add vertical spacing between items */
-    }
-
-    /* Adjust font sizes for mobile */
-    nav a {
-        font-size: 14px; /* Smaller font size for mobile */
-    }
+body.mobile nav a {
+    font-size: 14px; /* Smaller font size for mobile */
 }

@@ -49,7 +49,7 @@ body {
 /* Styles for mobile devices */
 body.mobile nav {
     flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center all items horizontally */
+    align-items: flex-start; /* Align all items to the left */
     padding: 7px; /* Reduce padding */
 }
 
@@ -57,11 +57,11 @@ body.mobile nav .logo {
     position: relative; /* Use relative positioning */
     margin: 0; /* Remove unnecessary margins */
     transform: none; /* Remove transform */
-    text-align: center; /* Ensure the logo is centered */
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center the logo horizontally */
+    text-align: left; /* Align the logo to the left */
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align the logo to the left */
     align-items: center; /* Center the logo vertically */
-
+    width: auto; /* Ensure the logo does not stretch */
 }
 
 body.mobile nav .left-items,

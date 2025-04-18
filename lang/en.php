@@ -37,5 +37,11 @@ $lang = [
     'search-results-no-results' => 'No results found.',
     'search-results-display' => 'Displaying results for ',
     'search-results-back' => 'Back to Search',
+    // Portfolio
+    'portfolio-title' => 'Portfolio',
+    'portfolio-description' => 'My portfolio showcases my work and projects.',
+    'portfolio-intro' => 'Welcome to my portfolio! Here I will be adding details of past experiences and projects, as well as dressing the page up as a project in web design.',
+    // Miscellaneous
+    'return-home' => 'Return to Home',
 ];
 ?>

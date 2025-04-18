@@ -2,9 +2,7 @@
     <nav>
         <div class="left-items">
             <ul>
-                <li><a href="#cv"><?php echo $lang['cv-short']; ?></a></li>
-                <li><a href="#about"><?php echo $lang['about']; ?></a></li>
-                <li><a href="#contact"><?php echo $lang['contact']; ?></a></li>
+                <li><a href="#career-portfolio.php"><?php echo $lang['portfolio-title']; ?></a></li>
             </ul>
         </div>
         

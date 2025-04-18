@@ -14,6 +14,7 @@
     
     <section id="contact">
         <h2><?php echo $lang['contact']; ?></h2>
+        <p><?php echo $lang['contact-paragraph']; ?></p>
         <?php if (isset($_GET['success'])): ?>
             <p> <?php echo $lang['contact-success']; ?> </p>
         <?php endif; ?>

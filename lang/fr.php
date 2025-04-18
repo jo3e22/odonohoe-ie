@@ -10,6 +10,7 @@ $lang = [
     'about' => 'À propos de moi',
     // Contact section
     'contact' => 'Contactez-moi',
+    'contact-paragraph' => 'Ce formulaire de contact peut avoir des problèmes car il est en cours de transition vers un nouveau serveur et fournisseur d\'hébergement. Si vous rencontrez des problèmes, veuillez me contacter via LinkedIn ou GitHub.',
     'contact-email' => 'Adresse courriel:',
     'contact-email-placeholder' => 'exemple@exemple.fr',
     'contact-message' => 'Message:',

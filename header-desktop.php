@@ -2,7 +2,7 @@
     <nav>
         <div class="left-items">
             <ul>
-                <li><a href="#career-portfolio.php"><?php echo $lang['portfolio-title']; ?></a></li>
+                <li><a href="career-portfolio.php"><?php echo $lang['portfolio-title']; ?></a></li>
             </ul>
         </div>
         

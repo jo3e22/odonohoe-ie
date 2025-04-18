@@ -9,6 +9,7 @@
 @import url('navigation.css');
 @import url('form.css');
 @import url('social-media.css');
+@import url('language-switcher.css');
 
 :root {
     --primary-color: #122620; /* Example primary color */
@@ -17,6 +18,7 @@
     --secondary-color: #fffef9; /* Example secondary color */
     --text-color: #333333; /* Example text color */
     --background-color: #ffffff; /* Example background color */
+    --mobile-footer-color: #00bfff; /* Mobile footer color for demonstrating the change */
 }
 
 body {
@@ -25,6 +27,20 @@ body {
     padding: 0;
 }
 
-main {
+main.desktop {
+    font-size: 16px;
     padding: 20px;
+}
+
+main.mobile {
+    font-size: 14px;
+    padding: 10px;
+}
+
+main.desktop section {
+    margin-bottom: 40px;
+}
+
+main.mobile section {
+    margin-bottom: 20px;
 }

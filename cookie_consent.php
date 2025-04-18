@@ -1,46 +1,42 @@
 <?php
 // cookie_consent.php
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cookie_consent'])) {
+    $cookie_consent = $_POST['cookie_consent'];
+    setcookie('cookie_consent', $cookie_consent, time() + (86400 * 365), '/'); // Cookie expires in 1 year
+    
+    if ($cookie_consent === 'accepted') {
+        $user_preference = isset($_POST['user_preference']) ? $_POST['user_preference'] : 'light_mode';
+        $language = isset($_POST['language']) ? $_POST['language'] : 'en';
+        setcookie('user_preference', $user_preference, time() + (86400 * 30), '/'); // Expires in 30 days
+        setcookie('language', $language, time() + (86400 * 30), '/'); // Expires in 30 days
+    }
+
+    echo json_encode(['status' => 'success', 'message' => $lang['cookies-preference']]);
+    exit;
+}
+
 if (isset($_COOKIE['cookie_consent'])) {
-    // User has already made a choice, use that
     $cookie_consent = $_COOKIE['cookie_consent'];
 } else {
-    // User hasn't made a choice yet, default to declined
     $cookie_consent = 'declined';
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['cookie_consent'])) {
-    // User has made a choice, set a cookie to remember it
-    $cookie_consent = $_POST['cookie_consent'];
-    setcookie('cookie_consent', $cookie_consent, time() + (86400 * 365), '/'); // Cookie expires in 1 year
+// Set the language based on the cookie or default to English
+$language = isset($_COOKIE['language']) ? $_COOKIE['language'] : 'en';
+$lang_file = "lang/{$language}.php";
+if (file_exists($lang_file)) {
+    include $lang_file;
+} else {
+    include "lang/en.php"; // Fallback to English
 }
 ?>
 
+<?php if (!isset($_COOKIE['cookie_consent'])): ?>
 <div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #f1f1f1; padding: 20px; text-align: center;">
-    <p>Cookies are optional, and used to enhance your browsing experience.</p>
-    <button id="cookie-consent-btn-accept">Accept</button>
-    <button id="cookie-consent-btn-decline">Decline</button>
+    <p><?php echo $lang['cookies-message']; ?></p>
+    <button id="cookie-consent-btn-accept"><?php echo $lang['cookies-accept']; ?></button>
+    <button id="cookie-consent-btn-decline"><?php echo $lang['cookies-decline']; ?></button>
 </div>
+<?php endif; ?>
 
-<script>
-document.getElementById('cookie-consent-btn-accept').addEventListener('click', function() {
-    // Send a POST request to the server to indicate the user's consent
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'cookie_consent.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.send('cookie_consent=accepted');
-
-    // Hide the cookie consent banner
-    document.getElementById('cookie-consent-banner').style.display = 'none';
-});
-
-document.getElementById('cookie-consent-btn-decline').addEventListener('click', function() {
-    // Send a POST request to the server to indicate the user's decline
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'cookie_consent.php', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.send('cookie_consent=declined');
-
-    // Hide the cookie consent banner
-    document.getElementById('cookie-consent-banner').style.display = 'none';
-});
-</script>
+<script src="js/cookie-consent.js"></script>

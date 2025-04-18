@@ -1,5 +1,4 @@
 /* navigation.css */
-
 nav {
     display: flex;
     justify-content: space-between; /* Space between left and right items */
@@ -18,10 +17,6 @@ nav .right-items {
     align-items: center; /* Center items vertically */
 }
 
-/*nav .logo {
-    flex: 1; /* Allow the logo to take up space */
-/*    text-align: center; /* Center the logo */
-/*}*/
 nav .logo {
     flex: 0 0 auto; /* Prevent the logo from growing or shrinking */
     margin: 0 auto; /* Center the logo */
@@ -51,45 +46,52 @@ body {
     padding-top: 70px; /* Adjust this value based on the height of your nav */
 }
 
+/* Styles for mobile devices */
+body.mobile nav {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space between the logo and menu */
+    padding: 10px; /* Add padding around the nav */
+    width: 100%; /* Ensure the nav spans the full width */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
 
-/* Media Queries for Mobile Devices */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to the start */
-        padding: 5px; /* Reduce padding */
-    }
+body.mobile nav .logo {
+    margin: 0; /* Remove unnecessary margins */
+    text-align: left; /* Align the logo to the left */
+}
 
-    nav .logo {
-        position: relative; /* Change to relative positioning */
-        margin: 0; /* Remove margin */
-        transform: none; /* Remove transform */
-    }
+body.mobile nav .logo img {
+    max-width: 100%; /* Ensure the logo scales properly */
+    height: 50px; /* Adjust the height of the logo */
+}
 
-    nav .left-items,
-    nav .right-items {
-        width: 100%; /* Make left and right items full width */
-        justify-content: space-between; /* Space items evenly */
-        margin-top: 5px; /* Add some space between items */
-    }
+body.mobile nav .mobile-menu {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-end; /* Align the menu to the right */
+}
 
-    nav .right-items {
-        justify-content: flex-end; /* Align right items to the end */
-    }
+body.mobile nav .mobile-menu ul {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Align menu items in a row */
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
 
-    nav ul {
-        flex-direction: column; /* Stack list items vertically */
-        width: 100%; /* Make the list full width */
-        padding: 0; /* Remove padding */
-        margin: 0; /* Remove margin */
-    }
+body.mobile nav .mobile-menu ul li {
+    margin: 0 10px; /* Add horizontal spacing between menu items */
+}
 
-    nav ul li {
-        margin: 5px 0; /* Add vertical spacing between items */
-    }
+body.mobile nav .mobile-menu ul li a {
+    text-decoration: none; /* Remove underline */
+    color: var(--primary-color); /* Use your primary color */
+    font-size: 16px; /* Adjust font size for readability */
+    font-weight: bold; /* Make the text bold */
+    transition: color 0.3s; /* Add a hover effect */
+}
 
-    /* Adjust font sizes for mobile */
-    nav a {
-        font-size: 14px; /* Smaller font size for mobile */
-    }
+body.mobile nav .mobile-menu ul li a:hover {
+    color: var(--secondary-color); /* Change color on hover */
 }

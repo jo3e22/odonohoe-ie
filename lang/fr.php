@@ -5,7 +5,7 @@ $lang = [
     'header-search-placeholder' => 'Rechercher...',
     'header-toggle-font' => 'Changer de police',
     // Welcome section
-    'welcome' => 'Bienvenue sur mon site web!',
+    'welcome' => "Bienvenue sur mon site web ! J'ai commencé ce projet pour apprendre de nouveaux langages de programmation ainsi que la structure des sites web et leur hébergement. Il n'y a pas d'objectif spécifique pour le moment, donc je m'attends à ce qu'il y ait de nombreux changements alors que j'explore de nouvelles fonctionnalités et possibilités en apprenant."
     // About section
     'about' => 'À propos de moi',
     // Contact section

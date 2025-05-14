@@ -5,7 +5,7 @@ $lang = [
     'header-search-placeholder' => 'Search...',
     'header-toggle-font' => 'Toggle Font',
     // Welcom section
-    'welcome' => 'Welcome to my website!',
+    'welcome' => 'Welcome to my website!  I have started this project to learn new programming languages as well as the structure behind websites and the hosting of them.  There is no specific goal at the moment so I expect there to be plenty of changes as I explore new features and possibilities as I learn.',
     // About section
     'about' => 'About Me',
     // Contact section

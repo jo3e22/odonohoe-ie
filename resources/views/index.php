@@ -9,7 +9,7 @@
 
     <section id="cv">
         <h2>Curriculum Vitae</h2>
-        <p>Download my CV: <a href="uploads/my_cv.pdf" target="_blank">Click here</a></p>
+        <p>Download my CV: <a href="../../uploads/my_cv.pdf" target="_blank">Click here</a></p>
     </section>
     
     <section id="contact">

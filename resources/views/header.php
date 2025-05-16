@@ -10,8 +10,8 @@ function getVersion($file) {
     return file_exists($file) ? filemtime($file) : time(); // Use the last modified time or current time if the file doesn't exist
 }
 
-include 'analytics.php';
-include 'cookie_consent.php';
+include '../../analytics.php';
+include '../../cookie_consent.php';
 // Include the user path tracking script only if the user has accepted cookies
 if ($cookie_consent === 'accepted') {
     include 'track-user-path.js';
@@ -24,7 +24,7 @@ if ($cookie_consent === 'accepted') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>James O'Donohoe - Personal Website</title>
-    <link rel="stylesheet" href="css/styles.css?v=<?php echo getVersion('styles.css'); ?>">
+    <link rel="stylesheet" href="../css/styles.css?v=<?php echo getVersion('styles.css'); ?>">
 </head>
 <body>
     <header>
@@ -37,7 +37,7 @@ if ($cookie_consent === 'accepted') {
                 </ul>
             </div>
             <<div class="logo">
-                <a href="index.php"><img src="images/logo-122620-fffef9.png" alt="My Website Logo" style="height:100px;"></a>
+                <a href="index.php"><img src="../../images/logo-122620-fffef9.png" alt="My Website Logo" style="height:100px;"></a>
             </div>
             <div class="right-items">
                 <button id="font-toggle">Toggle Font</button> <!-- Button to toggle fonts -->

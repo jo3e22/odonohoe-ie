@@ -1,4 +1,4 @@
-<footer>
+<footer class="footer">
         <h3><?php echo $lang['footer-h3']; ?></h3>
         <ul class="social-media">
             <li><a href="https://www.linkedin.com/in/james-o-b17b34222/" target="_blank"><?php echo $lang['footer-linkedin']; ?></a></li>
